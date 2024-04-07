@@ -1,2 +1,6 @@
-package org.example;public enum ClientType {
+package org.example;
+
+public enum ClientType {
+    STANDARD,
+    VIP
 }

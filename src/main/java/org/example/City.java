@@ -1,2 +1,7 @@
-package org.example;public enum City {
+package org.example;
+
+public enum City {
+    LONDON,
+    PARIS,
+    BERLIN
 }

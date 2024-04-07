@@ -1,2 +1,5 @@
-package org.example;public interface IHumanResource {
+package org.example;
+
+public interface IHumanResource {
+    abstract boolean needMedicalInsurance();
 }
