@@ -1,21 +1,18 @@
-package org.example;
+package org.example.model;
+
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDate;
 import java.util.Objects;
 
-public class VipClient extends Client{
+@Setter
+@Getter
+public class VipClient extends Client {
     private boolean satisfied;
 
     public VipClient(String name, String surname, LocalDate birthDate) {
         super(name, surname, birthDate);
-    }
-
-    public boolean isSatisfied() {
-        return satisfied;
-    }
-
-    public void setSatisfied(boolean satisfied) {
-        this.satisfied = satisfied;
     }
 
     @Override

@@ -1,21 +1,18 @@
-package org.example;
+package org.example.model;
+
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDate;
 import java.util.Objects;
 
-public class StandardClient extends Client{
+@Setter
+@Getter
+public class StandardClient extends Client {
     private boolean wasOnceInactive;
 
     public StandardClient(String name, String surname, LocalDate birthDate) {
         super(name, surname, birthDate);
-    }
-
-    public boolean isWasOnceInactive() {
-        return wasOnceInactive;
-    }
-
-    public void setWasOnceInactive(boolean wasOnceInactive) {
-        this.wasOnceInactive = wasOnceInactive;
     }
 
     @Override

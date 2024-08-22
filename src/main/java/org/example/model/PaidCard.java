@@ -1,30 +1,18 @@
-package org.example;
+package org.example.model;
+
+import lombok.Getter;
+import lombok.Setter;
+import org.example.config.ClientType;
 
 import java.time.LocalDate;
 import java.util.HashMap;
-import java.util.Locale;
 import java.util.Objects;
 
+@Setter
+@Getter
 public class PaidCard {
-
     private HashMap<LocalDate, Integer> paidMoney;
     private ClientType clientType;
-
-    public HashMap<LocalDate, Integer> getPaidMoney() {
-        return paidMoney;
-    }
-
-    public void setPaidMoney(HashMap<LocalDate, Integer> paidMoney) {
-        this.paidMoney = paidMoney;
-    }
-
-    public ClientType getClientType() {
-        return clientType;
-    }
-
-    public void setClientType(ClientType clientType) {
-        this.clientType = clientType;
-    }
 
     @Override
     public int hashCode() {

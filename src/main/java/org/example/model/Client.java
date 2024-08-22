@@ -1,9 +1,14 @@
-package org.example;
+package org.example.model;
+
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.Objects;
 
+@Getter
+@Setter
 public abstract class Client implements IHumanResource {
     private final String name;
     private final String surname;
@@ -17,46 +22,6 @@ public abstract class Client implements IHumanResource {
         this.name = name;
         this.surname = surname;
         this.birthDate = birthDate;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getSurname() {
-        return surname;
-    }
-
-    public LocalDate getBirthDate() {
-        return birthDate;
-    }
-
-    public boolean isActive() {
-        return active;
-    }
-
-    public void setActive(boolean active) {
-        this.active = active;
-    }
-
-    public Address getAddress() {
-        return address;
-    }
-
-    public void setAddress(Address address) {
-        this.address = address;
-    }
-
-    public PaidCard getPaidCard() {
-        return paidCard;
-    }
-
-    public void setPaidCard(PaidCard paidCard) {
-        this.paidCard = paidCard;
-    }
-
-    public void setNeedMedicalInsurance(boolean needMedicalInsurance) {
-        this.needMedicalInsurance = needMedicalInsurance;
     }
 
     @Override

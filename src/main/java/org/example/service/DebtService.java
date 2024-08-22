@@ -1,4 +1,8 @@
-package org.example;
+package org.example.service;
+
+import org.example.model.Client;
+import org.example.model.PaidCard;
+import org.example.config.ClientType;
 
 import java.time.LocalDate;
 import java.time.Period;
@@ -8,6 +12,10 @@ import java.util.TreeMap;
 
 
 public class DebtService {
+    private static final int VIP_DURATION = 90;
+    private static final int STANDARD_DURATION = 30;
+    private static final int CARD_VALID_DURATION_COEF = 2;
+
     public boolean isDebtorByCard(PaidCard paidCard) {
         LocalDate paidDate = null;
         for (LocalDate key : paidCard.getPaidMoney().keySet()) {
@@ -15,8 +23,8 @@ public class DebtService {
         }
         Period period = Period.between(paidDate, LocalDate.now());
         int days = period.getDays();
-        if (paidCard.getClientType() == ClientType.VIP && days >= 90) return true;
-        else if (paidCard.getClientType() == ClientType.STANDARD && days >= 30) return true;
+        if (paidCard.getClientType() == ClientType.VIP && days >= VIP_DURATION) return true;
+        else if (paidCard.getClientType() == ClientType.STANDARD && days >= STANDARD_DURATION) return true;
         return false;
     }
 
@@ -28,7 +36,7 @@ public class DebtService {
             preLastDate = lastDate;
             lastDate = entry;
         }
-        if (client.isActive() && lastDate.getValue() > preLastDate.getValue()*2) return true;
+        if (client.isActive() && lastDate.getValue() > preLastDate.getValue() * CARD_VALID_DURATION_COEF) return true;
         return false;
     }
 }

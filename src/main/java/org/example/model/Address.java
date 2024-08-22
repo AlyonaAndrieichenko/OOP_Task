@@ -1,29 +1,18 @@
-package org.example;
+package org.example.model;
+
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Objects;
 
+@Setter
+@Getter
 public class Address {
     private City city;
     private int houseNumber;
 
     public Address(City city, int houseNumber) {
         this.city = city;
-        this.houseNumber = houseNumber;
-    }
-
-    public City getCity() {
-        return city;
-    }
-
-    public void setCity(City city) {
-        this.city = city;
-    }
-
-    public int getHouseNumber() {
-        return houseNumber;
-    }
-
-    public void setHouseNumber(int houseNumber) {
         this.houseNumber = houseNumber;
     }
 
