@@ -1,6 +1,7 @@
 package org.example.model;
 
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
@@ -9,6 +10,7 @@ import java.util.Objects;
 
 @Getter
 @Setter
+@RequiredArgsConstructor
 public abstract class Client implements IHumanResource {
     private final String name;
     private final String surname;
@@ -17,12 +19,6 @@ public abstract class Client implements IHumanResource {
     private Address address;
     private PaidCard paidCard;
     private boolean needMedicalInsurance;
-
-    public Client(String name, String surname, LocalDate birthDate) {
-        this.name = name;
-        this.surname = surname;
-        this.birthDate = birthDate;
-    }
 
     @Override
     public boolean equals(Object o) {
